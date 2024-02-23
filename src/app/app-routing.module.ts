@@ -5,6 +5,11 @@ import { LoginComponent } from './modules/login/login.component';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login',
+  },
+  {
     path: 'ms/:page',
     component: ChatComponent
   },
