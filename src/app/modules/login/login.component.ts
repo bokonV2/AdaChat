@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   onEnter(): void {
-    if (Md5.hashStr(this.password1) != '41c5fe55419dd46f90d267ec5d9b65bc') return; // z*sTe2FS!WV;QN.%K-    41c5fe55419dd46f90d267ec5d9b65bc
-    if (Md5.hashStr(this.password2) != 'a5755e200086a6989544f6ede0542e69') return; // B{w)hA(>x@agEN7YMz    a5755e200086a6989544f6ede0542e69
+    if (Md5.hashStr(this.password1) != '41c5fe55419dd46f90d267ec5d9b65bc') return;
+    if (Md5.hashStr(this.password2) != 'a5755e200086a6989544f6ede0542e69') return;
     localStorage.setItem('ad3f3', '20521');
     this._router.navigate(['ms', '0']);
   }
