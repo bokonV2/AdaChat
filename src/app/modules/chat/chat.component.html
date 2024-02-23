@@ -1,0 +1,33 @@
+<div class="chat">
+  <div class="head">
+    <h3>страница: {{page}}</h3>
+
+
+
+    <div class="arrows">
+      <svg (click)="changePage(-1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+      <svg (click)="changePage(1)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </div>
+  </div>
+  <ng-container *ngIf="currentMessages">
+    <ng-container *ngFor="let message of currentMessages">
+      <div class="block"
+        [class.ada]="!message.from"
+        *ngIf="message.type == 'message'"
+      >
+        <div class="message">
+          <div class="text" *ngIf="message.text else notDowload">{{message.text}}</div>
+        </div>
+        <span class="date">{{message.date | date: 'dd.MM.yyyy hh:mm'}}</span>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
+
+<ng-template #notDowload>†стикер|фотка|голосовое†</ng-template>
